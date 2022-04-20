@@ -17,8 +17,24 @@ resource "aws_redshift_parameter_group" "this" {
   family = "redshift-1.0"
 
   parameter {
-    name  = "wlm_json_configuration"
-    value = var.wlm_json_configuration
+    name = "wlm_json_configuration"
+    value = jsonencode(
+      [
+        {
+          auto_wlm            = true
+          concurrency_scaling = "auto"
+          name                = "Default queue"
+          query_group         = []
+          user_group          = []
+        },
+        {
+          query_concurrency = 5
+        },
+        {
+          short_query_queue = true
+        },
+      ]
+    )
   }
 
   parameter {
