@@ -43,11 +43,6 @@ variable "enable_case_sensitive_identifier" {
   default     = false
 }
 
-variable "tags" {
-  description = "A mapping of tags to assign to all resources"
-  type        = map(string)
-  default     = "krasteki"
-}
 
 variable "parameter_group_name" {
   description = "The name of the parameter group to be associated with this cluster. If not specified new parameter group will be created."
