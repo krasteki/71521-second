@@ -12,7 +12,7 @@ provider "aws" {
 
 resource "aws_redshift_parameter_group" "this" {
   # if we were passed a value for parameter_group_name, don't bother creating a parameter group
-  count  = 2
+  count  = length(var.parameter_group_name) > 0 ? 0 : 1
   name   = "krasteki-${count.index}"
   family = "redshift-1.0"
 

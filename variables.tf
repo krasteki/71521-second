@@ -48,3 +48,9 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "parameter_group_name" {
+  description = "The name of the parameter group to be associated with this cluster. If not specified new parameter group will be created."
+  type        = string
+  default     = ""
+}
