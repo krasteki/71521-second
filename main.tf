@@ -66,5 +66,7 @@ resource "aws_redshift_parameter_group" "this" {
     value = var.enable_case_sensitive_identifier
   }
 
-  tags = var.tags
+   tags = {
+    name = "krk"
+   }
 }
