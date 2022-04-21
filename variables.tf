@@ -46,7 +46,7 @@ variable "enable_case_sensitive_identifier" {
 variable "tags" {
   description = "A mapping of tags to assign to all resources"
   type        = map(string)
-  default     = {}
+  default     = "krasteki"
 }
 
 variable "parameter_group_name" {
